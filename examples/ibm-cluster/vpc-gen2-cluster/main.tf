@@ -18,14 +18,14 @@ resource "ibm_is_vpc" "vpc1" {
 resource "ibm_is_subnet" "subnet1" {
   name                     = "subnet-${random_id.name1.hex}"
   vpc                      = ibm_is_vpc.vpc1.id
-  zone                     = local.ZONE1
+  zone                     = "us-south-1"
   total_ipv4_address_count = 256
 }
 
 resource "ibm_is_subnet" "subnet2" {
   name                     = "subnet-${random_id.name2.hex}"
   vpc                      = ibm_is_vpc.vpc1.id
-  zone                     = local.ZONE2
+  zone                     = "us-south-2"
   total_ipv4_address_count = 256
 }
 
@@ -57,7 +57,7 @@ resource "ibm_container_vpc_cluster" "cluster" {
 
   zones {
     subnet_id = ibm_is_subnet.subnet1.id
-    name      = local.ZONE1
+    name      = "us-south-1"
   }
 
   kms_config {
@@ -75,7 +75,7 @@ resource "ibm_container_vpc_worker_pool" "cluster_pool" {
   worker_count      = var.worker_count
   resource_group_id = data.ibm_resource_group.resource_group.id
   zones {
-    name      = local.ZONE2
+    name      = "us-south-2"
     subnet_id = ibm_is_subnet.subnet2.id
   }
 }

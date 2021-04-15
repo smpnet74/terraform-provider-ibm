@@ -20,7 +20,7 @@ variable "name" {
 }
 
 variable "region" {
-  default = "us-east"
+  default = "us-south"
 }
 
 variable "service_instance_name" {
