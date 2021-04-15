@@ -8,7 +8,7 @@ variable "worker_count" {
 }
 
 variable "zone" {
-  default = "us-south-1"
+  default = "us-east-1"
 }
 
 variable "resource_group" {
@@ -20,7 +20,7 @@ variable "name" {
 }
 
 variable "region" {
-  default = "us-south"
+  default = "us-east"
 }
 
 variable "service_instance_name" {
