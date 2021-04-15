@@ -1,6 +1,5 @@
 variable "flavor" {
   default = "bx2.2x8"
-
 }
 
 variable "worker_count" {
