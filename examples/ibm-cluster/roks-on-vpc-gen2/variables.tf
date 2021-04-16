@@ -11,11 +11,11 @@ variable "cos_service_plan" {
 }
 
 variable "cluster_node_flavor" {
-    default = "bx2.16x64"
+    default = "bx2.4x16"
 }
 
 variable "cluster_kube_version" {
-    default = "4.4_openshift"
+    default = "4.6_openshift"
 }
 
 variable "deafult_worker_pool_count"{
@@ -31,7 +31,7 @@ variable "resource_group" {
 }
 
 variable "cluster_name" {
-  default = "cluster-roks-on-vpc"
+  default = "smp-roks-cluster1"
 }
 
 variable "worker_pool_name" {
