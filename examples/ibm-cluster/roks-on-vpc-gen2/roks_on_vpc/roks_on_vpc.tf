@@ -142,15 +142,3 @@ resource "ibm_resource_instance" "sysdig" {
   plan     = "graduated-tier"
   location = var.region
 }
-
-resource "ibm_resource_key" "resourceKey" {
-  name                 = "TestKey"
-  resource_instance_id = ibm_resource_instance.sysdig.id
-  role                 = "Manager"
-}
-
-resource "ibm_ob_monitoring" "test2" {
-  depends_on  = [ibm_resource_key.resourceKey]
-  cluster     = ibm_container_vpc_cluster.cluster.id
-  instance_id = ibm_resource_instance.sysdig.guid
-}
