@@ -3,7 +3,7 @@ variable "ibmcloud_api_key" {
 }
 
 variable "cos_service_name" {
-    default = "myservice"
+    default = "smp-roks-myservice"
 }
 
 variable "cos_service_plan" {
@@ -18,7 +18,7 @@ variable "cluster_kube_version" {
     default = "4.6_openshift"
 }
 
-variable "deafult_worker_pool_count"{
+variable "default_worker_pool_count"{
     default = "2"
 }
 
@@ -35,7 +35,7 @@ variable "cluster_name" {
 }
 
 variable "worker_pool_name" {
-  default = "workerpool"
+  default = "smp-roks-workerpool"
 }
 
 variable "entitlement"{
