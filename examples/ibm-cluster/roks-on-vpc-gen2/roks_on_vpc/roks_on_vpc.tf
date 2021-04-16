@@ -135,3 +135,22 @@ resource "ibm_container_vpc_worker_pool" "cluster_pool" {
     name      = "${var.region}-3"
   }
 }
+
+resource "ibm_resource_instance" "sysdig" {
+  name     = "TestMonitoring"
+  service  = "sysdig-monitor"
+  plan     = "graduated-tier"
+  location = "us-south"
+}
+
+resource "ibm_resource_key" "resourceKey" {
+  name                 = "TestKey"
+  resource_instance_id = ibm_resource_instance.sysdig.id
+  role                 = "Manager"
+}
+
+resource "ibm_ob_monitoring" "test2" {
+  depends_on  = [ibm_resource_key.resourceKey]
+  cluster     = ibm_container_vpc_cluster.cluster.id
+  instance_id = ibm_resource_instance.sysdig.guid
+}
