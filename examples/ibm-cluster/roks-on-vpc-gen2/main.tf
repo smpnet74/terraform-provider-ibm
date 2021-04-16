@@ -8,7 +8,7 @@ module "cluster_and_workerpool" {
   source = "./roks_on_vpc"
   flavor = var.cluster_node_flavor
   kube_version = var.cluster_kube_version
-  worker_count = var.deafult_worker_pool_count
+  worker_count = var.default_worker_pool_count
   region = var.region
   resource_group = var.resource_group
   cluster_name = var.cluster_name
