@@ -135,10 +135,3 @@ resource "ibm_container_vpc_worker_pool" "cluster_pool" {
     name      = "${var.region}-3"
   }
 }
-
-resource "ibm_resource_instance" "sysdig" {
-  name     = "TestMonitoring"
-  service  = "sysdig-monitor"
-  plan     = "graduated-tier"
-  location = var.region
-}
