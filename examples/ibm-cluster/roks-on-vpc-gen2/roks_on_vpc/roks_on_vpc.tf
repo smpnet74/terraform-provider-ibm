@@ -140,7 +140,7 @@ resource "ibm_resource_instance" "sysdig" {
   name     = "TestMonitoring"
   service  = "sysdig-monitor"
   plan     = "graduated-tier"
-  location = "us-south"
+  location = ${var.region}
 }
 
 resource "ibm_resource_key" "resourceKey" {
