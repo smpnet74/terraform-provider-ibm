@@ -154,9 +154,10 @@ resource "ibm_resource_instance" "logdna" {
   plan     = "7-day"
   location = var.region
 }
-data "ibm_resource_key" "resourceKeydata" {
-  name                  = "myobjectKey"
-  resource_instance_id  = ibm_resource_instance.logdna.id
+resource "ibm_resource_key" "resourceKey" {
+  name                 = "TestKey"
+  resource_instance_id = ibm_resource_instance.logdna.id
+  role                 = "Manager"
 }
 
 resource "ibm_ob_logging" "test3" {
