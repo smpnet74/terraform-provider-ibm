@@ -27,15 +27,15 @@ variable "region" {
 }
 
 variable "resource_group" {
-  default = "Default"
+  default = "roks-cluster1"
 }
 
 variable "cluster_name" {
-  default = "smp-roks-cluster1"
+  default = "roks-cluster1"
 }
 
 variable "worker_pool_name" {
-  default = "smp-roks-workerpool"
+  default = "roks-cluster1-workerpool"
 }
 
 variable "entitlement"{
