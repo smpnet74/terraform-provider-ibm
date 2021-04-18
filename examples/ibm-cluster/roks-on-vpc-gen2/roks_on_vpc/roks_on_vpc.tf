@@ -142,9 +142,3 @@ resource "ibm_resource_instance" "sysdig" {
   plan     = "graduated-tier"
   location = var.region
 }
-
-resource "ibm_resource_key" "resourceKey" {
-  name                 = "testresourcekey"
-  resource_instance_id = ibm_resource_instance.sysdig.id
-  role                 = "Manager"
-}
