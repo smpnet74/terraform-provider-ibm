@@ -147,3 +147,15 @@ resource "ibm_ob_monitoring" "test2" {
   cluster     = ibm_container_vpc_cluster.cluster.id
   instance_id = ibm_resource_instance.sysdig.guid
 }
+
+resource "ibm_resource_instance" "logdna" {
+  name     = "TestLogging"
+  service  = "logdna"
+  plan     = "7-day"
+  location = var.region
+}
+
+resource "ibm_ob_logging" "test3" {
+  cluster     = ibm_container_cluster.testacc_cluster.id
+  instance_id = ibm_resource_instance.instance.guid
+}
