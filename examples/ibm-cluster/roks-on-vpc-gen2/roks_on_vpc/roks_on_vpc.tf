@@ -164,3 +164,11 @@ resource "ibm_ob_logging" "test3" {
   cluster     = ibm_container_vpc_cluster.cluster.id
   instance_id = ibm_resource_instance.logdna.guid
 }
+
+resource "ibm_container_addons" "addons" {
+  cluster = ibm_container_vpc_cluster.cluster.name
+  addons {
+    name    = "kube-terminal"
+    version = "1.0.0"
+  }
+}
