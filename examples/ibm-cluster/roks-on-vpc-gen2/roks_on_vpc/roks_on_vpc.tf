@@ -65,7 +65,7 @@ resource "ibm_is_subnet" "subnet3" {
   public_gateway = ibm_is_public_gateway.testacc_gateway3.id
 }
 
-resource "ibm_resource_group" "resource_group" {
+data "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
 
@@ -89,7 +89,7 @@ resource "ibm_container_vpc_cluster" "cluster" {
   kube_version      = var.kube_version
   flavor            = var.flavor
   worker_count      = var.worker_count
-  resource_group_id = ibm_resource_group.resource_group.id
+  resource_group_id = data.ibm_resource_group.resource_group.id
   entitlement       = var.entitlement
   cos_instance_crn  = var.cos_instance_crn
 
@@ -120,7 +120,7 @@ resource "ibm_container_vpc_worker_pool" "cluster_pool" {
   flavor            = var.flavor
   vpc_id            = ibm_is_vpc.vpc1.id
   worker_count      = var.worker_count
-  resource_group_id = ibm_resource_group.resource_group.id
+  resource_group_id = data.ibm_resource_group.resource_group.id
   entitlement       = var.entitlement
   zones {
     subnet_id = ibm_is_subnet.subnet1.id
