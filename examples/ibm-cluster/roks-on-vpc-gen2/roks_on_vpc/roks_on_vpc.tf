@@ -65,7 +65,7 @@ resource "ibm_is_subnet" "subnet3" {
   public_gateway = ibm_is_public_gateway.testacc_gateway3.id
 }
 
-data "ibm_resource_group" "resource_group" {
+resource "ibm_resource_group" "resource_group" {
   name = var.resource_group
 }
 
