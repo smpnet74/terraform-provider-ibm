@@ -157,5 +157,5 @@ resource "ibm_resource_instance" "logdna" {
 
 resource "ibm_ob_logging" "test3" {
   cluster     = ibm_container_cluster.cluster.id
-  instance_id = ibm_resource_instance.instance.guid
+  instance_id = ibm_resource_instance.logdna.guid
 }
