@@ -1,0 +1,39 @@
+{
+    "name": "roks_cluster_east",
+    "type": [
+        "terraform_v0.12"
+    ],
+    "description": "",
+    "template_repo": {
+        "url": "https://github.com/smpnet74/terraform-provider-ibm/tree/master/examples/ibm-cluster/roks-on-vpc-gen2"
+    },
+    "template_data": [
+        {
+            "folder": ".",
+            "type": "terraform_v0.12",
+            "variablestore": [
+                {
+                    "name": "region",
+                    "value": "us-east",
+                    "type": "string"
+                },
+                {
+                    "name": "cluster_name",
+                    "value": "roks-east-1",
+                    "type": "string"
+                },
+                {
+                    "name": "worker_pool_name",
+                    "value": "roks-workerpool-east-1",
+                    "type": "string"
+                },
+                {
+                    "name": "resource_group",
+                    "value": "Default",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "githubtoken": "<provide your githubtoken>"
+}
