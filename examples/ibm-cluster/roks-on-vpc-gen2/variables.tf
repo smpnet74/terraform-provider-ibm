@@ -27,7 +27,7 @@ variable "region" {
 }
 
 variable "resource_group" {
-  default = "roks-cluster1"
+  default = "Default"
 }
 
 variable "cluster_name" {
