@@ -15,7 +15,7 @@ variable "cluster_node_flavor" {
 }
 
 variable "cluster_kube_version" {
-    default = "4.6.22_openshift"
+    default = "4.6.23_openshift"
 }
 
 variable "default_worker_pool_count"{
