@@ -73,7 +73,7 @@ resource "ibm_resource_instance" "kms_instance1" {
     name              = "test_kms"
     service           = "kms"
     plan              = "tiered-pricing"
-    location          = "us-south"
+    location          = "${var.region}"
 }
   
 resource "ibm_kms_key" "test" {
